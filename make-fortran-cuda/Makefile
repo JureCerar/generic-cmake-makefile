@@ -60,14 +60,14 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.f90
 $(OBJDIR)/%.o: $(SRCDIR)/%.cuf
 	$(CUDA) $(CUDA_FLAGS) -fPIC -c -o $@ $< $(INCLUDES)
 
+.PHONY: clean install test
+
 install: $(BIN)
 	$(INSTALL) -d $(INSTALL_DIR)
 	$(INSTALL) $(BIN) $(INSTALL_DIR)
 
 test: $(BIN)
 	./$(BIN)
-
-.PHONY: clean
 
 clean:
 	rm -rf $(OBJDIR) $(BINDIR)

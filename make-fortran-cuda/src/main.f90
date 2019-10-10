@@ -1,6 +1,5 @@
 program main
   implicit none
-
-  print *, "Hello World!"
+  call detectCudaDevices()
 
 end program main

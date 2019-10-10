@@ -1,6 +1,5 @@
 program main
   implicit none
-
-  call kernel()
+  write(*,*) "Hello World!"
 
 end program main
