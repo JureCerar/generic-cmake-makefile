@@ -2,12 +2,12 @@
 APP				 = a.out
 
 # Compiler
-FC 		    := cxx
-FC_FLAGS  := -fopenmp -g -Og -march=native -pipe
+CXX 	    := g++
+CXX_FLAGS := -fopenmp -g -Og -march=native -pipe
 # FC_FLAGS  += $(shell pkg-config xxx --cflags)
 
 # Linker
-LD        := cxx
+LD        := g++
 LD_FLAGS  :=
 # LD_FLAGS  += $(shell pkg-config xxx --libs)
 
@@ -24,8 +24,8 @@ OBJ = $(SRC:.cpp=.o)
 $(APP): $(OBJ)
 	$(LD) $(LD_FLAGS) $< -o $(APP)
 
-%.o: %.c
-	$(FC) $(FC_FLAGS) -c $^
+%.o: %.cpp
+	$(CXX) $(CXX_FLAGS) -c $^
 
 .PHONY: test install clean
 

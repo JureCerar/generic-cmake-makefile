@@ -2,14 +2,14 @@
 APP				 = a.out
 
 # Compiler
-FC 		    := gcc
-FC_FLAGS  := -fopenmp -g -Og -march=native -pipe
-# FC_FLAGS  += $(shell pkg-config --cflags)
+CC 		    := gcc
+CC_FLAGS  := -fopenmp -g -Og -march=native -pipe
+# FC_FLAGS  += $(shell pkg-config xxx --cflags)
 
 # Linker
 LD        := gcc
 LD_FLAGS  :=
-# LD_FLAGS  += $(shell pkg-config --libs)
+# LD_FLAGS  += $(shell pkg-config xxx --libs)
 
 # Install
 INSTALL   := install
@@ -25,7 +25,7 @@ $(APP): $(OBJ)
 	$(LD) $(LD_FLAGS) $< -o $(APP)
 
 %.o: %.c
-	$(FC) $(FC_FLAGS) -c $^
+	$(CC) $(CC_FLAGS) -c $^
 
 .PHONY: test install clean
 
