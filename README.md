@@ -9,6 +9,7 @@ A collection of generic Makefile and CMake scripts for Fortran, CUDA-Fortran, C 
 ## To-do:
 - [ ] Add C/C++ CUDA cmake.
 - [ ] Add Fortran-CUDA cmake. 
+- [ ] Add generic Fortran/C/C++ library cmake.  
 
 ## License
 This program is licensed under the **GNU General Public License v3.0**
